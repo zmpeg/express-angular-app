@@ -11,6 +11,7 @@ app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'jade');
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'bower_components')));
 
 const env = process.env.NODE_ENV || 'development';
 
