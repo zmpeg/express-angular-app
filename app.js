@@ -16,15 +16,14 @@ const env = process.env.NODE_ENV || 'development';
 
 app.get('/', routes.index);
 
+app.use(function(req, res, next) {
+	var err = new Error("Not Found");
+	err.status = 404;
+	next(err);
+});
+
 app.use(function(err, req, res, next) {
-	if(err)
-	{
-		res.status(err.status).send(err.message);
-	}
-	else
-	{
-  	res.status(404).send("Not found");
-	}
+	res.status(err.status).send(err.message);
 });
 
 http.createServer(app).listen(app.get('port'), function() {
