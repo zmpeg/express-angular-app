@@ -1,0 +1,14 @@
+{
+  "name": "express-sample",
+  "version": "0.0.0",
+  "description": "A sample express/angular app",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Matt Zandstra",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^2.3.3"
+  }
+}
