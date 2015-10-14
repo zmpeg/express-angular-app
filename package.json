@@ -4,7 +4,7 @@
   "description": "A sample express/angular app",
   "main": "app.js",
   "scripts": {
-    "test": "mocha",
+    "test": "node_modules/.bin/mocha --recursive",
     "start": "node app.js"
   },
   "author": "Matt Zandstra",
