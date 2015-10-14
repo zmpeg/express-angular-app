@@ -8,7 +8,7 @@ const http = require('http');
 const app = module.exports = express();
 
 app.set('port', process.env.PORT || 3000);
-// app.set('view engine', 'jade');
+app.set('view engine', 'jade');
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -23,6 +23,7 @@ app.use(function(req, res, next) {
 });
 
 app.use(function(err, req, res, next) {
+	console.log(err);
 	res.status(err.status).send(err.message);
 });
 
