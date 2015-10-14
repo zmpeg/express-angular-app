@@ -2,9 +2,10 @@
   "name": "express-sample",
   "version": "0.0.0",
   "description": "A sample express/angular app",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node app.js"
   },
   "author": "Matt Zandstra",
   "license": "ISC",
