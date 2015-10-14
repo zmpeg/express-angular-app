@@ -9,6 +9,7 @@
   "author": "Matt Zandstra",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.13.3",
     "mocha": "^2.3.3"
   }
 }
