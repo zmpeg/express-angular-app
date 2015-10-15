@@ -4,19 +4,20 @@ html(ng-app='csvApp')
     meta(name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no")
     link(rel="stylesheet" href="angular-material/angular-material.css")
   body(ng-controller="dataController")
-    h1 CSV Explorer
     #app-tabs(ng-cloak)
       md-content
-        md-tabs(md-dynamic-height md-border-bottom)
+        md-toolbar.md-primary
+          h2.md-toolbar-tools CSV Explorer
+        md-tabs.md-primary.md-dynamic-height.md-border-bottom
+          md-tab(label="Inspect Data")
+            md-content.md-padding
+              h1.md-display-2 View Data
+              p {{data}}
           md-tab(label="Load Data")
             md-content.md-padding
               h1.md-display-2 Load Data
               p Place CSV formatted text into this box to load your data.
               textarea(ng-model="data")
-          md-tab(label="Inspect Data")
-            md-content.md-padding
-              h1.md-display-2 View Data
-              p {{data}}
     script(src='angular/angular.js')
     script(src="/angular-aria/angular-aria.js")
     script(src="/angular-animate/angular-animate.js")
