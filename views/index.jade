@@ -2,5 +2,11 @@ doctype html
 html
   head
     script(src='angular/angular.js')
-  body
+    script(src='js/app.js')
+    script(src='js/controllers.js')
+  body(ng-app='mapApp')
     h1 Hello World!
+    div(ng-controller="myController")
+      h2 {{ message }}
+      input(ng-model="message")
+    p thefooter
