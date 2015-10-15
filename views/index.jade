@@ -1,17 +1,22 @@
 doctype html
-html
+html(ng-app='csvApp')
   head
     meta(name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no")
     link(rel="stylesheet" href="angular-material/angular-material.css")
-  body(ng-app='csvApp')
+  body(ng-controller="dataController")
     h1 CSV Explorer
-    div(ng-controller="dataController")
-      a(href ng-click="showSource = !showSource") Upload a CSV
-      div(ng-show="showSource")
-        p Paste the CSV source here.
-        textarea(ng-model="data")
-      p {{data}}
-    p thefooter
+    #app-tabs(ng-cloak)
+      md-content
+        md-tabs(md-dynamic-height md-border-bottom)
+          md-tab(label="Load Data")
+            md-content.md-padding
+              h1.md-display-2 Load Data
+              p Place CSV formatted text into this box to load your data.
+              textarea(ng-model="data")
+          md-tab(label="Inspect Data")
+            md-content.md-padding
+              h1.md-display-2 View Data
+              p {{data}}
     script(src='angular/angular.js')
     script(src="/angular-aria/angular-aria.js")
     script(src="/angular-animate/angular-animate.js")

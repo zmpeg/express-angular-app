@@ -1,2 +1,2 @@
 
-var app = angular.module("csvApp", []);
+var app = angular.module("csvApp", ['ngMaterial']);
