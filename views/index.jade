@@ -15,7 +15,11 @@ html(ng-app='csvApp')
               table
                 tr(ng-repeat="row in parsedData")
                   td(ng-repeat="cell in row") {{cell}}
-          md-tab(label="Load Data")
+          md-tab(label="Analyze Data")
+            md-content.md-padding
+              h1.md-display-2 Analyze
+              a(href) Run Analysis
+          md-tab(label="Load New Data")
             md-content.md-padding
               h1.md-display-2 Load Data
               p Place CSV formatted text into this box to load your data.
