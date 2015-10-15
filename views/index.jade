@@ -4,9 +4,12 @@ html
     script(src='angular/angular.js')
     script(src='js/app.js')
     script(src='js/controllers.js')
-  body(ng-app='mapApp')
-    h1 Hello World!
-    div(ng-controller="myController")
-      h2 {{ message }}
-      input(ng-model="message")
+  body(ng-app='csvApp')
+    h1 CSV Explorer
+    div(ng-controller="dataController")
+      a(href ng-click="showSource = !showSource") Upload a CSV
+      div(ng-show="showSource")
+        p Paste the CSV source here.
+        textarea(ng-model="data")
+      p {{data}}
     p thefooter

@@ -1,2 +1,2 @@
 
-var app = angular.module("mapApp", []);
+var app = angular.module("csvApp", []);

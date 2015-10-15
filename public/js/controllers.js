@@ -1,4 +1,5 @@
 
-var myController = angular.module("mapApp").controller("myController", ["$scope", function($scope) {
-  $scope.message = "Message here";
+var myController = angular.module("csvApp").controller("dataController", ["$scope", function($scope) {
+  $scope.data = "Message here";
+  $scope.showSource = false
 }]);
