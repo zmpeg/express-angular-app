@@ -15,16 +15,17 @@ html(ng-app='csvApp')
               table
                 tr(ng-repeat="row in parsedData")
                   td(ng-repeat="cell in row") {{cell}}
+          md-tab(label="Modify Data")
+            md-content.md-padding
+              h1.md-display-2 Modify Data
+              p Place CSV formatted text into this box to load your data.
+              md-input-container
+                textarea.md-input(ng-model="data")
           md-tab(label="Analyze Data")
             md-content.md-padding
               h1.md-display-2 Analyze
               a(href ng-click="analyze()") Run Analysis
               p Average: {{avg}}
-          md-tab(label="Load New Data")
-            md-content.md-padding
-              h1.md-display-2 Load Data
-              p Place CSV formatted text into this box to load your data.
-              textarea(ng-model="data")
     script(src='angular/angular.js')
     script(src='js/papaparse.min.js')
     script(src="/angular-aria/angular-aria.js")
