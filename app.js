@@ -4,6 +4,7 @@ const routes = require('./routes');
 const morgan = require('morgan');
 const path = require('path');
 const http = require('http');
+const bodyParser = require('body-parser');
 
 const app = module.exports = express();
 
@@ -12,10 +13,13 @@ app.set('view engine', 'jade');
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 const env = process.env.NODE_ENV || 'development';
 
 app.get('/', routes.index);
+app.post('/analyze', routes.analyze);
 
 app.use(function(req, res, next) {
 	var err = new Error("Not Found");

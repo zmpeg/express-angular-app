@@ -11,14 +11,17 @@ html(ng-app='csvApp')
         md-tabs.md-primary.md-dynamic-height.md-border-bottom
           md-tab(label="Inspect Data")
             md-content.md-padding
-              h1.md-display-2 View Data
-              p {{data}}
+              h1.md-display-2 Inspect
+              table
+                tr(ng-repeat="row in parsedData")
+                  td(ng-repeat="cell in row") {{cell}}
           md-tab(label="Load Data")
             md-content.md-padding
               h1.md-display-2 Load Data
               p Place CSV formatted text into this box to load your data.
               textarea(ng-model="data")
     script(src='angular/angular.js')
+    script(src='js/papaparse.min.js')
     script(src="/angular-aria/angular-aria.js")
     script(src="/angular-animate/angular-animate.js")
     script(src="/angular-material/angular-material.js")
