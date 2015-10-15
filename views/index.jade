@@ -18,7 +18,8 @@ html(ng-app='csvApp')
           md-tab(label="Analyze Data")
             md-content.md-padding
               h1.md-display-2 Analyze
-              a(href) Run Analysis
+              a(href ng-click="analyze()") Run Analysis
+              p Average: {{avg}}
           md-tab(label="Load New Data")
             md-content.md-padding
               h1.md-display-2 Load Data
