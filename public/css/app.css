@@ -4,3 +4,7 @@ table td, table th {
   border-right: 1px solid #AAA;
   border-bottom: 1px solid #AAA;
 }
+
+textarea {
+  max-height:200px !important;
+}
